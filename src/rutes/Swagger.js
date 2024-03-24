@@ -9,7 +9,7 @@ const options = {
   },
   apis: [
     //TODO: rutas de Authenticacion
-    "./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
+    "./src/rutes/Auth.js","./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
     //TODO: rutas de USUARIOS
     "./src/rutes/documentacion/User/Userid.yaml","./src/rutes/documentacion/User/AllUser.yaml",
     //TODO: rutas de CURSOS
