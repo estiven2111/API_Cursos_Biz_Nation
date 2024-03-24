@@ -13,13 +13,9 @@ const PORT = process.env.PORT || 3008;
 
 
 
-// sequelize.sync({ force: false }).then(() => {
-//   server.listen(PORT, "0.0.0.0", () => {
-//     console.log(`Escuchando en el puerto ${PORT}`);
-//     swaggerDocs(app,PORT)
-//   });
-// });
-server.listen(PORT, "0.0.0.0", () => {
-  console.log(`Escuchando en el puerto ${PORT}`);
-  swaggerDocs(app,PORT)
+sequelize.sync({ force: false }).then(() => {
+  server.listen(PORT, "0.0.0.0", () => {
+    console.log(`Escuchando en el puerto ${PORT}`);
+    swaggerDocs(app,PORT)
+  });
 });
