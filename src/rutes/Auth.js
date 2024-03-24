@@ -3,6 +3,83 @@ const { HandlerAuth} = require("../handler/index");
 const authRouter = Router();
 
 authRouter.post("/register", HandlerAuth.postRegister);
+
+/**
+ * @openapi
+ * paths:
+ *   /api/login:
+ *     post:
+ *       tags:
+ *         - Autenticación
+ *       summary: ingresa con tu usuario y contraseña
+ *       requestBody:
+ *         required: true
+ *         description: Debes proporcionar un usuario y contraseña
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 email:
+ *                   type: string
+ *                   example: estiven@gmail.com
+ *                 password:
+ *                   type: string
+ *                   example: Estiven123!
+ *               required:
+ *                 - email
+ *                 - password
+ *       responses:
+ *         '200':
+ *           description: Devuelve el accessToken y el refreshToken el cual debes poner en authorize para poder entrar a los demas endpoint
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   status:
+ *                     type: string
+ *                     example: OK
+ *                   data:
+ *                     type: object
+ *                     properties:
+ *                       accessToken:
+ *                         type: string
+ *                         example: "token_de_acceso_generado"
+ *                       refreshToken:
+ *                         type: string
+ *                         example: "token_de_actualización_generado"
+ *         '500':
+ *           description: FAILED
+ *           content:
+ *             application/json:
+ *               schema:
+ *                 type: object
+ *                 properties:
+ *                   status:
+ *                     type: string
+ *                     example: FAILED
+ *                   data:
+ *                     type: array
+ *                     items:
+ *                       type: object
+ *                       properties:
+ *                         success:
+ *                           type: boolean
+ *                           example: false
+ *                         message:
+ *                           type: string
+ *                           example: "Error de servidor"
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ */
+
+
+
 authRouter.post("/login", HandlerAuth.postLogin);
 
 

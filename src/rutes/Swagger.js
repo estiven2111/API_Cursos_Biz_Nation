@@ -9,7 +9,7 @@ const options = {
   },
   apis: [
     //TODO: rutas de Authenticacion
-    "./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
+    "./src/rutes/Auth.js","./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
     //TODO: rutas de USUARIOS
     "./src/rutes/documentacion/User/Userid.yaml","./src/rutes/documentacion/User/AllUser.yaml",
     //TODO: rutas de CURSOS
@@ -37,7 +37,7 @@ const swaggerDocs = (app, port) => {
     res.send(swaggerSpec);
   });
   console.log(
-    `📖 Version 1 Docs are available on http://localhost:${port}/api/v1/docs`
+    `📖 Version 1 Docs are available on https://apicursosbiznation-production.up.railway.app/api/v1/docs`
   );
 };
 
