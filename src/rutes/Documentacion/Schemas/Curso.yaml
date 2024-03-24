@@ -1,0 +1,57 @@
+components:
+  schemas:
+    Curso:
+      type: object
+      properties:
+        logo: 
+          type: string
+          example: https://res.cloudinary.com/draxxv99e/image/upload/v1711232366/Prueba_Biz_Nation/CURSOS/IMAGENES/node_rqmxl0.jpg
+        titulo:
+          type: string
+          example: CLASE DE NODEJS
+        descripcion:
+            type: string
+            example: Aprenderas a crear las mejores apis utilizando node.js
+        fechaPublicacion:
+            type: date
+            example: 2024-03-24
+        videoIntroductorio: 
+            type: string
+            example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
+        createdAt:
+          type: string
+          format: date-time
+          example: '2024-04-24T00:00:00Z'
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2024-04-24T00:00:00Z'
+        lecciones:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 5
+              cursoId:
+                type: integer
+                example: 7
+              titulo:
+                type: string
+                example: Introducción
+              descripcion:
+                type: string
+                example: Esta es la primera lección del curso
+              video:
+                type: string
+                example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
+              createdAt:
+                type: string
+                format: date-time
+                example: '2024-03-24T21:31:47.000Z'
+              updatedAt:
+                type: string
+                format: date-time
+                example: '2024-03-24T21:31:47.000Z'
+          

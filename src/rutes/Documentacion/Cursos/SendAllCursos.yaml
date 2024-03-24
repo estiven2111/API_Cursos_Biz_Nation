@@ -1,0 +1,53 @@
+paths:
+  /api/sendcursos:
+    get:
+      tags:
+      - Cursos
+      security:
+          - bearerAuth: []
+      summary: Obtiene todos los cursos generados en Biz Nation
+      responses:
+        '200':
+          description: Devuelve el estado un mensaje y el objeto del los cursos 
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: Boolean
+                          example: true
+                        message:
+                          type: string
+                          example: "Total cursos"
+                        usuario:
+                          $ref: "#/components/schemas/Curso"
+        '500':
+          description: FAILED
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: FAILED
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: boolean
+                          example: false
+                        message:
+                          type: string
+                          example: "Error de servidor"

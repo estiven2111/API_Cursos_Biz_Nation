@@ -1,0 +1,29 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '1'
+        nombreCompleto:
+          type: string
+          example: Estiven Arboleda
+        fechaNacimiento:
+          type: string
+          format: date-time
+          example: '1991-05-25T00:00:00Z'
+        email:
+          type: string
+          example: user@example.com
+        rol:
+          type: string
+          example: admin || estudiante
+        createdAt:
+          type: string
+          format: date-time
+          example: '2024-04-24T00:00:00Z'
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2024-04-24T00:00:00Z'

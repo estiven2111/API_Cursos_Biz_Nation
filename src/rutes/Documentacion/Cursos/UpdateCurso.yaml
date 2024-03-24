@@ -1,0 +1,67 @@
+paths:
+  /api/putcursos/{id}:
+    put:
+      tags:
+        - Cursos
+      security:
+          - bearerAuth: []
+      summary: Ingresa todos los datos requeridos para la creacion de un nuevo curso
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del Curso a modificar
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        description: Modifica los datos del curso que deseas editar este es un ejemplo de como deberia de ser la informacion
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Curso"
+      responses:
+        '200':
+          description: Devuelve el estado un mensaje y el objeto del curso Editado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: Boolean
+                          example: true
+                        message:
+                          type: string
+                          example: "Se edito correctamente el curso"
+                        usuario:
+                          $ref: "#/components/schemas/Curso"
+
+        '500':
+          description: FAILED
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: FAILED
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: boolean
+                          example: false
+                        message:
+                          type: string
+                          example: "Error de servidor"

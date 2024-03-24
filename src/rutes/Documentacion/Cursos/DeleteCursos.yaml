@@ -1,0 +1,59 @@
+paths:
+  /api/deletecursos/{id}:
+    delete:
+      tags:
+        - Cursos
+      security:
+          - bearerAuth: []
+      summary: Ingrese el id del curso que desea eliminar de forma logica
+      parameters:
+        - name: id
+          in: path
+          description: Identificador del Curso a eliminar
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Devuelve el estado y un mensaje 
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: Boolean
+                          example: true
+                        message:
+                          type: string
+                          example: "Se realizo una eliminacion logica al curso"
+
+        '500':
+          description: FAILED
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: FAILED
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: boolean
+                          example: false
+                        message:
+                          type: string
+                          example: "Error de servidor"
