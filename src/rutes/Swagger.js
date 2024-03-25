@@ -9,17 +9,17 @@ const options = {
   },
   apis: [
     //TODO: rutas de Authenticacion
-    "./src/rutes/Auth.js","./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
+    "./src/rutes/Auth.js","./src/rutes/Documentacion/Auth/RegisterAuth.yaml","./src/rutes/Documentacion/Auth/LoginAuth.yaml",
     //TODO: rutas de USUARIOS
-    "./src/rutes/documentacion/User/Userid.yaml","./src/rutes/documentacion/User/AllUser.yaml",
+    "./src/rutes/Documentacion/User/Userid.yaml","./src/rutes/Documentacion/User/AllUser.yaml",
     //TODO: rutas de CURSOS
-    "./src/rutes/documentacion/Cursos/SendAllCursos.yaml","./src/rutes/documentacion/Cursos/CreateCurso.yaml",
-    "./src/rutes/documentacion/Cursos/UpdateCurso.yaml","./src/rutes/documentacion/Cursos/DeleteCurso.yaml",
+    "./src/rutes/Documentacion/Cursos/SendAllCursos.yaml","./src/rutes/Documentacion/Cursos/CreateCurso.yaml",
+    "./src/rutes/Documentacion/Cursos/UpdateCurso.yaml","./src/rutes/Documentacion/Cursos/DeleteCurso.yaml",
      
     //TODO: rutas de ESQUEMAS BASES DE DATOS INFORMACION
-    "./src/rutes/documentacion/Schemas/User.yaml","./src/rutes/documentacion/Schemas/Curso.yaml", //? base de datos shemas
+    "./src/rutes/Documentacion/Schemas/User.yaml","./src/rutes/Documentacion/Schemas/Curso.yaml", //? base de datos shemas
     //TODO: rutas de ERROR EN PRUEBA
-    "./src/rutes/documentacion/Errores/Error.yaml" //? Errores
+    "./src/rutes/Documentacion/Errores/Error.yaml" //? Errores
   ],
 };
 
