@@ -12,6 +12,7 @@ const options = {
     "./src/rutes/Documentacion/Auth/RegisterAuth.yaml","./src/rutes/Documentacion/Auth/LoginAuth.yaml",
     //TODO: rutas de USUARIOS
     "./src/rutes/Documentacion/User/Userid.yaml","./src/rutes/Documentacion/User/AllUser.yaml",
+    "./src/rutes/Documentacion/User/Userid.yaml","./src/rutes/Documentacion/User/AllUser.yaml",
     //TODO: rutas de CURSOS
     "./src/rutes/Documentacion/Cursos/SendAllCursos.yaml","./src/rutes/Documentacion/Cursos/CreateCurso.yaml",
     "./src/rutes/Documentacion/Cursos/UpdateCurso.yaml","./src/rutes/Documentacion/Cursos/DeleteCursos.yaml",
