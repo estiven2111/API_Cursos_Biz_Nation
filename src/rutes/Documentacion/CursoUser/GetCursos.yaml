@@ -76,3 +76,9 @@ paths:
                         message:
                           type: string
                           example: "Error de servidor"
+components:
+  securitySchemes:
+   bearerAuth:
+     type: http
+     scheme: bearer
+     bearerFormat: JWT
