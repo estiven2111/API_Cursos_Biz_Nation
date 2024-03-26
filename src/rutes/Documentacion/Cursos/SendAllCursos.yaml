@@ -7,6 +7,15 @@ paths:
       security:
           - bearerAuth: []
       summary: Obtiene todos los cursos generados en Biz Nation
+      parameters:
+        - name: numCursos
+          in: query 
+          description: Numero de cursos a mostrar
+          required: true 
+        - name: pagina
+          in: query 
+          description: Nuemero de pagina
+          required: true 
       responses:
         '200':
           description: Devuelve el estado un mensaje y el objeto del los cursos 
