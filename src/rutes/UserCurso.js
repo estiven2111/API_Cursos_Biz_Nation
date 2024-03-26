@@ -1,8 +1,17 @@
-const Router = require("express")
-const {UserCursoHandler} = require("../handler")
+const Router = require("express");
+const { UserCursoHandler } = require("../handler");
 const { Authenticated } = require("../middleware/index");
-const UserCursoRouter = Router()
+const UserCursoRouter = Router();
 
-UserCursoRouter.post('/relacion_usercurso/',UserCursoHandler.postCreateUserCurso)
+const Usuario = require("../models/User");
+const Cursos = require("../models/Curso");
+const Lecciones = require("../models/Lesson");
+const ProgesoCurso = require("../models/ProgresCurso");
 
-module.exports = {UserCursoRouter}
+UserCursoRouter.post(
+  "/relacion_usercurso/",
+  UserCursoHandler.postCreateUserCurso
+);
+UserCursoRouter.get("/cursosuser/:UserId", UserCursoHandler.getobtainCursoUser);
+
+module.exports = { UserCursoRouter };

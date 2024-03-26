@@ -1,43 +1,34 @@
 paths:
-  /api/putcursos/{id}:
-    put:
+  /api/createlesson/{id}:
+    post:
       tags:
-        - Cursos
-      security:
-          - bearerAuth: []
-      summary: Ingresa todos los datos requeridos para la creacion de un nuevo curso
+      - LECCIONES
+      summary: Agregar lecciones a cursos
       parameters:
         - name: id
           in: path
-          description: Identificador del Curso a modificar
+          description: Enviar el id del usuario
           required: true
-          schema:
-            type: integer
       requestBody:
-        description: Modifica los datos del curso que deseas editar este es un ejemplo de como deberia de ser la informacion
+        required: true
+        description: Llena la informacion de la leccion para ser creada relacion al curso
         content:
           application/json:
             schema:
               type: object
               properties:
-                logo:
-                  type: string
-                  example: https://res.cloudinary.com/draxxv99e/image/upload/v1711232366/Prueba_Biz_Nation/CURSOS/IMAGENES/node_rqmxl0.jpg
                 titulo:
                   type: string
-                  example: CLASE DE NODEJS
+                  example: Leccion de aplicacion node
                 descripcion:
                   type: string
-                  example: Aprenderas a crear las mejores apis utilizando node.js
-                fechaPublicacion:
-                  type: date
-                  example: 2024-03-24
-                videoIntroductorio:
-                   type: string
-                   example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
+                  example: En esta leccion aprenderas como manejar eventos
+                video:
+                  type: string
+                  example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
       responses:
         '200':
-          description: Devuelve el estado un mensaje y el objeto del curso Editado
+          description: Devuelve el accessToken y el refreshToken el cual debes poner en authorize para poder entrar a los demas endpoint
           content:
             application/json:
               schema:
@@ -56,10 +47,16 @@ paths:
                           example: true
                         message:
                           type: string
-                          example: "Se edito correctamente el curso"
-                        usuario:
-                          $ref: "#/components/schemas/Curso"
-
+                          example: introducion lesion
+                        titulo:
+                          type: string
+                          example: Leccion creado exitosamente
+                        descripcion:
+                          type: string
+                          example: descripcion leccion
+                        video:
+                          type: string
+                          example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
         '500':
           description: FAILED
           content:

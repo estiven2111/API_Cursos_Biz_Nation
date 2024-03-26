@@ -1,0 +1,78 @@
+paths:
+  /api/cursosuser/{UserId}:
+    get:
+      tags:
+        - USUARIO_CURSO
+      summary: Podemos seleccionar un curso para un usuario registrado
+      parameters:
+        - name: numCursos
+          in: query 
+          description: Numero de cursos a mostrar
+          required: true 
+        - name: pagina
+          in: query 
+          description: Nuemero de pagina
+          required: true 
+        - name: UserId
+          in: path
+          description: Enviar el id del usuario
+          required: true
+      responses:
+        '200':
+          description: Devuelve los datos del usuario, los cursos que tiene agregados y las lecciones relacionadas a cada curso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  message:
+                    type: string
+                    example: Total de cursos
+                  response:
+                    type: object
+                    properties:
+                      data:
+                         type: array
+                         items:
+                         data:
+                         $ref: "#/components/schemas/infoCursoUser"
+                      Pagination:
+                        type: object
+                        properties:
+                          CurrentPage:
+                            type: string
+                            example: "1"
+                          TotalPages:
+                            type: integer
+                            example: 2
+                          PageSize:
+                            type: string
+                            example: "1"
+                          TotalItems:
+                            type: integer
+                            example: 2
+                   
+        '500':
+          description: FAILED
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: FAILED
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        success:
+                          type: boolean
+                          example: false
+                        message:
+                          type: string
+                          example: "Error de servidor"

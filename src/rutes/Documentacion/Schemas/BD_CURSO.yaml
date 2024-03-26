@@ -1,0 +1,24 @@
+components:
+  schemas:
+    DB_CURSO:
+      type: object
+      properties:
+        logo:
+          type: string
+          example: "https://example.com/logo.png"
+        titulo:
+          type: string
+          example: "Curso de Programación"
+        descripcion:
+          type: string
+          example: "Aprende a programar desde cero."
+        fechaPublicacion:
+          type: string
+          format: date-time
+          example: "2024-03-24T00:00:00.000Z"
+        videoIntroductorio:
+          type: string
+          example: "https://example.com/intro_video.mp4"
+        softdelete:
+          type: boolean
+          example: true

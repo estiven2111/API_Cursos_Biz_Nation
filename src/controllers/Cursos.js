@@ -40,6 +40,7 @@ const CreateCurso = async (req) => {
       cursoId: Curso.id
     });
     await leson.save();
+
     const cursoConLecciones = await Cursos.findByPk(Curso.id, { include: 'lecciones' });
 
     return { success: true, message: "curso creado exitosamente", cursoConLecciones };
@@ -53,9 +54,32 @@ const CreateCurso = async (req) => {
 const sendCursos = async (req) => {
   try {
 
+const {numCursos,pagina} = req.query
+const PAGE_SIZE = numCursos; // Número de cursos por página
+const currentPage = pagina; // Página actual 
    
     const curso = await Cursos.findAll( { include: 'lecciones' });
-    return { success: true, menssage:"Total cursos", curso };
+
+        // Obtener el índice inicial y final de los cursos para la página actual
+const startIndex = (currentPage - 1) * PAGE_SIZE;
+const endIndex = startIndex + PAGE_SIZE;
+
+// Dividir el arreglo de cursos en páginas
+const cursosPaginados = curso.slice(startIndex, endIndex);
+
+// Crear una respuesta con los cursos de la página actual y la información de paginación
+const response = {
+  success: true,
+  message: "Total de cursos",
+  data: cursosPaginados,
+  pagination: {
+    currentPage,
+    totalPages: Math.ceil(curso.length / PAGE_SIZE),
+    pageSize: PAGE_SIZE,
+    totalItems: curso.length
+  }
+};
+    return { success: true, menssage:"Total cursos", response };
   } catch (error) {
     console.error("Error al seleccionar el sendcurso:", error);
     return { success: false, message: "error de servidor" };
@@ -81,7 +105,6 @@ const sendCursosid = async (req) => {
 const updateCurso = async (req) => {
   try {
     const { id } = req.params;
-console.log("paramtroooooooooooo",id)
     const { logo, titulo, descripcion, fechaPublicacion, videoIntroductorio } =
       req.body;
     const { body } = req;

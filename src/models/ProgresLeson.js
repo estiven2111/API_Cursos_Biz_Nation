@@ -10,6 +10,11 @@ const ProgresoLecciones = sequelize.define('ProgresoLecciones', {
   }
 });
 
+Usuario.hasMany(ProgresoLecciones);
+ProgresoLecciones.belongsTo(Usuario);
+
+Lecciones.hasMany(ProgresoLecciones);
+ProgresoLecciones.belongsTo(Lecciones);
 
 
 module.exports = ProgresoLecciones;

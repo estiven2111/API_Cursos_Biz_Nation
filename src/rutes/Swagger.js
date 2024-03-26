@@ -9,17 +9,29 @@ const options = {
   },
   apis: [
     //TODO: rutas de Authenticacion
-    "./src/rutes/Auth.js","./src/rutes/documentacion/Auth/RegisterAuth.yaml","./src/rutes/documentacion/Auth/LoginAuth.yaml",
+    "./src/rutes/Documentacion/Auth/RegisterAuth.yaml","./src/rutes/Documentacion/Auth/LoginAuth.yaml",
     //TODO: rutas de USUARIOS
-    "./src/rutes/documentacion/User/Userid.yaml","./src/rutes/documentacion/User/AllUser.yaml",
+    "./src/rutes/Documentacion/User/Userid.yaml","./src/rutes/Documentacion/User/AllUser.yaml",
     //TODO: rutas de CURSOS
-    "./src/rutes/documentacion/Cursos/SendAllCursos.yaml","./src/rutes/documentacion/Cursos/CreateCurso.yaml",
-    "./src/rutes/documentacion/Cursos/UpdateCurso.yaml","./src/rutes/documentacion/Cursos/DeleteCurso.yaml",
+    "./src/rutes/Documentacion/Cursos/SendAllCursos.yaml","./src/rutes/Documentacion/Cursos/CreateCurso.yaml",
+    "./src/rutes/Documentacion/Cursos/UpdateCurso.yaml","./src/rutes/Documentacion/Cursos/DeleteCursos.yaml",
+
+     //TODO: rutas de CURSOSUSER
+     "./src/rutes/Documentacion/CursoUser/Create.yaml",  "./src/rutes/Documentacion/CursoUser/GetCursos.yaml", 
+
+        //TODO: rutas de LECCIONES
+        "./src/rutes/Documentacion/Lecciones/Lesson.yaml",  
      
-    //TODO: rutas de ESQUEMAS BASES DE DATOS INFORMACION
-    "./src/rutes/documentacion/Schemas/User.yaml","./src/rutes/documentacion/Schemas/Curso.yaml", //? base de datos shemas
-    //TODO: rutas de ERROR EN PRUEBA
-    "./src/rutes/documentacion/Errores/Error.yaml" //? Errores
+    //TODO: rutas de SCHEMAS  DATOS INFORMACION
+    "./src/rutes/Documentacion/Schemas/User.yaml","./src/rutes/Documentacion/Schemas/Curso.yaml", 
+    "./src/rutes/Documentacion/Schemas/CursoUser.yaml","./src/rutes/Documentacion/Schemas/InfoCursoUser.yaml",
+
+     //TODO: rutas de SCHEMAS  BASES DE DATOS
+     "./src/rutes/Documentacion/Schemas/BD_USER.yaml","./src/rutes/Documentacion/Schemas/BD_CURSO.yaml", 
+     "./src/rutes/Documentacion/Schemas/BD_PROGRESCURSO.yaml","./src/rutes/Documentacion/Schemas/BD_LESSON.yaml",
+     "./src/rutes/Documentacion/Schemas/BD_PROGRESLESSON.yaml",
+    //TODO: rutas de ERROR EN PRUEBA 
+    "./src/rutes/Documentacion/Errores/Error.yaml" //? Errores
   ],
 };
 

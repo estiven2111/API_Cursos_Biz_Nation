@@ -9,35 +9,31 @@ CursoRouter.get("/sendcursos", handlerCursos.getCursos);
 //TODO: Detalle del curso solo para administradores y estudiantes
 CursoRouter.get(
   "/sendcursos/:id",
-//   Authenticated.AsureAuth,
+  Authenticated.AsureAuth,
   handlerCursos.getCursosid
 );
 
 //TODO: Edicion del curso solo para administradores
 CursoRouter.put(
   "/putcursos/:id",
-//   Authenticated.AsureAuth,
-//   Authenticated.validationRol("admin"),
+  Authenticated.AsureAuth,
+  Authenticated.validationRol("admin"),
   handlerCursos.putCursosid
 );
 //TODO: Eliminacion del curso solo para administradores
 CursoRouter.delete(
   "/deletecursos/:id",
-//   Authenticated.AsureAuth,
-//   Authenticated.validationRol("admin"),
+  Authenticated.AsureAuth,
+  Authenticated.validationRol("admin"),
   handlerCursos.delCursosid
 );
-// //TODO: Cdicion del curso solo para administradores
-// CursoRouter.post(
-//   "/createcurso",
-//   Authenticated.AsureAuth,
-//   Authenticated.validationRol("admin"),
-//   handlerCursos.postCreateCurso
-// );
-//TODO: Cdicion del curso solo para administradores
+// //TODO: Creacion del curso solo para administradores
 CursoRouter.post(
-    "/createcurso",
-    handlerCursos.postCreateCurso
-  );
+  "/createcurso",
+  Authenticated.AsureAuth,
+  Authenticated.validationRol("admin"),
+  handlerCursos.postCreateCurso
+);
+
 
 module.exports = { CursoRouter };

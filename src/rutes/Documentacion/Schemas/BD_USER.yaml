@@ -1,0 +1,22 @@
+
+components:
+  schemas:
+    BD_USER:
+      type: object
+      properties:
+        nombreCompleto:
+          type: string
+          example: "John Doe"
+        fechaNacimiento:
+          type: string
+          format: date-time
+          example: "1990-01-01T00:00:00.000Z"
+        email:
+          type: string
+          example: "john@example.com"
+        password:
+          type: string
+          example: "password123"
+        rol:
+          type: string
+          example: "admin"

@@ -1,0 +1,10 @@
+components:
+  otherComponent:
+    type: object
+    properties:
+      foo:
+        type: string
+        example: hla
+      bar:
+        type: integer
+        example: 1

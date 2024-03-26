@@ -1,49 +1,45 @@
 paths:
-  /api/login:
+  /api/relacion_usercurso:
     post:
       tags:
-      - Autenticación
-      summary: ingresa con tu usuario y contraseña
+      - USUARIO_CURSO
+      summary: Podemos seleccionar un curso para un usuario registrado
       requestBody:
         required: true
-        description: Debes proporcionar un usuario y contraseña
+        description: Debes enviar el id del usuario y el id del curso 
         content:
           application/json:
             schema:
               type: object
               properties:
-                email:
+                usuarioId:
                   type: string
-                  example: estiven@gmail.com
-                password:
+                  example: 1
+                cursoId:
                   type: string
-                  example: Estiven123!
-              required:
-                - email
-                - password
+                  example: 1
       responses:
         '200':
-          description: Devuelve el accessToken y el refreshToken el cual debes poner en authorize para poder entrar a los demas endpoint
+          description: Devuelve los datos del usuario los cursos que tiene agregados y que lecciones tiene relacionadas cada curso
           content:
             application/json:
-              schema:
+               schema:
                 type: object
                 properties:
                   status:
                     type: string
                     example: OK
                   message:
-                     type: string
-                     example: "Ingreso correctamente "
-                  data:
+                    type: string
+                    example: agregado al usuario correctamente
+                  response:
                     type: object
                     properties:
-                      accessToken:
-                        type: string
-                        example: "token_de_acceso_generado"
-                      refreshToken:
-                        type: string
-                        example: "token_de_actualización_generado"
+                      data:
+                         type: array
+                         items:
+                         data:
+                         $ref: "#/components/schemas/CursoUser"
         '500':
           description: FAILED
           content:
@@ -65,11 +61,3 @@ paths:
                         message:
                           type: string
                           example: "Error de servidor"
-components:
-  securitySchemes:
-   bearerAuth:
-     type: http
-     scheme: bearer
-     bearerFormat: JWT
-
-

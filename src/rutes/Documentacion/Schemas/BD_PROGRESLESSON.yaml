@@ -1,0 +1,12 @@
+components:
+  schemas:
+    BD_PROGRESO_LESSON:
+      type: object
+      properties:
+        estado:
+          type: string
+          enum:
+            - pendiente
+            - progreso
+            - finalizado
+          example: "pendiente"

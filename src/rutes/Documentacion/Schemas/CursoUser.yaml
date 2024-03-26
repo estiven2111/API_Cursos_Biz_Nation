@@ -1,0 +1,146 @@
+components:
+  schemas:
+    CursoUser:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '2'
+        nombreCompleto:
+          type: string
+          example: ESTIVEN MARTINEZ
+        fechaNacimiento:
+          type: string
+          format: date-time
+          example: '1993-02-05T04:00:00.000Z'
+        email:
+          type: string
+          example: estiven@gmail.com
+        rol:
+          type: string
+          example: admin
+        createdAt:
+          type: string
+          format: date-time
+          example: '2024-03-25T23:42:59.000Z'
+        updatedAt:
+          type: string
+          format: date-time
+          example: '2024-03-25T23:42:59.000Z'
+        Cursos:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: '1'
+              logo:
+                type: string
+                example: "https://res.cloudinary.com/draxxv99e/image/upload/v1711232366/Prueba_Biz_Nation/CURSOS/IMAGENES/node_rqmxl0.jpg"
+              titulo:
+                type: string
+                example: "CLASE DE  FRONTE"
+              descripcion:
+                type: string
+                example: "Las mejores practicas tu front"
+              fechaPublicacion:
+                type: string
+                format: date-time
+                example: "2024-03-23T00:00:00.000Z"
+              videoIntroductorio:
+                type: string
+                example: "https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4"
+              softdelete:
+                type: boolean
+                example: true
+              createdAt:
+                type: string
+                format: date-time
+                example: "2024-03-25T23:43:18.000Z"
+              updatedAt:
+                type: string
+                format: date-time
+                example: "2024-03-25T23:43:18.000Z"
+              ProgresoCursos:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: '3'
+                    estado:
+                      type: string
+                      example: "pendiente"
+                    fechaAprobado:
+                      type: string
+                      format: date-time
+                      example: "2024-03-25T23:52:19.000Z"
+                    createdAt:
+                      type: string
+                      format: date-time
+                      example: "2024-03-25T23:52:19.000Z"
+                    updatedAt:
+                      type: string
+                      format: date-time
+                      example: "2024-03-25T23:52:19.000Z"
+                    UserId:
+                      type: string
+                      example: '2'
+                    CursoId:
+                      type: string
+                      example: '1'
+              lecciones:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: '1'
+                    cursoId:
+                      type: string
+                      example: '1'
+                    titulo:
+                      type: string
+                      example: "introducion lesion"
+                    descripcion:
+                      type: string
+                      example: "descripcion leccion"
+                    video:
+                      type: string
+                      example: "https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4"
+                    createdAt:
+                      type: string
+                      format: date-time
+                      example: "2024-03-25T23:43:18.000Z"
+                    updatedAt:
+                      type: string
+                      format: date-time
+                      example: "2024-03-25T23:43:18.000Z"
+                    ProgresoLecciones:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: '5'
+                          estado:
+                            type: string
+                            example: "pendiente"
+                          createdAt:
+                            type: string
+                            format: date-time
+                            example: "2024-03-25T23:52:19.000Z"
+                          updatedAt:
+                            type: string
+                            format: date-time
+                            example: "2024-03-25T23:52:19.000Z"
+                          UserId:
+                            type: string
+                            example: '2'
+                          LeccioneId:
+                            type: string
+                            example: '1'

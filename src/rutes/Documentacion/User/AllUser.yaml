@@ -2,6 +2,7 @@
     get:
       tags:
         - USUARIOS
+      summary: Obtiene todos los usuarios solo administradores
       security:
           - bearerAuth: []
       responses:

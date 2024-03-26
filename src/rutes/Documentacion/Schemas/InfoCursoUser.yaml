@@ -1,0 +1,28 @@
+components:
+  schemas:
+    infoCursoUser:
+      type: object
+      properties:
+        Logo:
+          type: string
+          example: "https://res.cloudinary.com/draxxv99e/image/upload/v1711232366/Prueba_Biz_Nation/CURSOS/IMAGENES/node_rqmxl0.jpg"
+        Titulo:
+          type: string
+          example: "CLASE DE FRONTE"
+        FechaPublicacion:
+          type: string
+          format: date-time
+          example: "2024-03-23T00:00:00.000Z"
+        VideoIntroductorio:
+          type: string
+          example: "https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4"
+        Estado:
+          type: string
+          example: "pendiente"
+        Lecciones:
+          type: integer
+          example: 2
+        LeccionesFinalizada:
+          type: integer
+          example: 0
+        

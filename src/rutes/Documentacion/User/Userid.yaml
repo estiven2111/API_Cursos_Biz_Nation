@@ -2,6 +2,7 @@
    get:
      tags:
        - USUARIOS
+     summary: Obtiene la informacion del usuario actual
      security:
          - bearerAuth: []
      responses:

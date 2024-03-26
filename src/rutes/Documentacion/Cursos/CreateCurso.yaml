@@ -3,17 +3,44 @@ paths:
   /api/createcurso:
     post:
       tags:
-      - Cursos
+        - Cursos
       security:
-          - bearerAuth: []
+        - bearerAuth: []
       summary: Ingresa todos los datos requeridos para la creacion de un nuevo curso
       requestBody:
+        required: true
+        description: Llena la informacion del curso completa
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Curso"
+              type: object
+              properties:
+                logo:
+                  type: string
+                  example: https://res.cloudinary.com/draxxv99e/image/upload/v1711232366/Prueba_Biz_Nation/CURSOS/IMAGENES/node_rqmxl0.jpg
+                titulo:
+                  type: string
+                  example: CLASE DE NODEJS
+                descripcion:
+                  type: string
+                  example: Aprenderas a crear las mejores apis utilizando node.js
+                fechaPublicacion:
+                  type: date
+                  example: 2024-03-24
+                videoIntroductorio:
+                   type: string
+                   example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
+                tituloles:
+                  type: string
+                  example: CLASE DE NODEJS
+                descripcionles:
+                  type: string
+                  example: Aprenderas a crear las mejores apis utilizando node.js
+                videoles:
+                   type: string
+                   example: https://res.cloudinary.com/draxxv99e/video/upload/v1711232513/Prueba_Biz_Nation/CURSOS/VIDEOS/TUTORIAL_PARA_INSCRIBIRSE_A_LOS_CURSOS_DE_THE_BIZ_NATION_CON_EL_CODIGO_PROMOCIONAL_APRENDOENCASA2020_fhf8tc.mp4
       responses:
-        '200':
+        "200":
           description: Devuelve el estado un mensaje y el objeto del curso creado
           content:
             application/json:
@@ -36,7 +63,7 @@ paths:
                           example: "curso creado exitosamente"
                         usuario:
                           $ref: "#/components/schemas/Curso"
-        '500':
+        "500":
           description: FAILED
           content:
             application/json:

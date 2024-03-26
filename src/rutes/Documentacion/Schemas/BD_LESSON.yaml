@@ -1,0 +1,17 @@
+components:
+  schemas:
+    DB_LESSON:
+      type: object
+      properties:
+        cursoId:
+          type: integer
+          example: 1
+        titulo:
+          type: string
+          example: "Lección de introducción"
+        descripcion:
+          type: string
+          example: "Esta es una lección introductoria al curso."
+        video:
+          type: string
+          example: "https://example.com/leccion_intro.mp4"
