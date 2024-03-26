@@ -3,6 +3,8 @@ paths:
     get:
       tags:
         - USUARIO_CURSO
+      security:
+        - bearerAuth: []
       summary: Podemos seleccionar un curso para un usuario registrado
       parameters:
         - name: numCursos

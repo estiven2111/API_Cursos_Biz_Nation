@@ -3,6 +3,8 @@ paths:
     post:
       tags:
       - USUARIO_CURSO
+      security:
+        - bearerAuth: []
       summary: Podemos seleccionar un curso para un usuario registrado
       requestBody:
         required: true

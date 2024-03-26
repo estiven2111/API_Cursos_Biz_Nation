@@ -3,6 +3,8 @@ paths:
     post:
       tags:
       - LECCIONES
+      security:
+        - bearerAuth: []
       summary: Agregar lecciones a cursos
       parameters:
         - name: id
